@@ -1,0 +1,815 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rezha Fahlevi | •Creative Thinker •Digital Creator •Inside Sales</title>
+    <meta name="description" content="Personal portfolio of Rezha Fahlevi. Creative Thinker, Digital Creator, and Product Consultant based in Indonesia.">
+    <meta name="theme-color" content="#080808">
+    
+    <!-- Preconnect for performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="dns-prefetch" href="https://i.imgur.com">
+    <link rel="dns-prefetch" href="https://unpkg.com">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/@phosphor-icons/web" defer></script>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        deepBlack: '#080808',
+                        secondaryBlack: '#121212',
+                        graphite: '#1C1C1E',
+                        accentPurple: '#D600FF', 
+                        accentPink: '#00D9FF',   
+                        ivory: '#F8FAFC',
+                        grey: '#94A3B8',
+                        lightBg: '#F8FAFC',
+                        lightCard: '#FFFFFF',
+                        lightSecondary: '#F1F5F9',
+                        lightText: '#0F172A',
+                        lightMuted: '#475569',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Space Grotesk', 'sans-serif'],
+                    },
+                    backgroundImage: {
+                        'theme-gradient': 'linear-gradient(135deg, #24005A 0%, #7928CA 33%, #D600FF 66%, #00D9FF 100%)',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            background-color: #080808;
+            color: #F8FAFC;
+            overflow-x: hidden;
+            position: relative;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        /* Light Mode Overrides */
+        html:not(.dark) body { background-color: #F8FAFC !important; color: #0F172A !important; }
+        html:not(.dark) h1, html:not(.dark) h2, html:not(.dark) h3, html:not(.dark) h4, html:not(.dark) h5, html:not(.dark) h6 { color: #0F172A !important; }
+        html:not(.dark) p, html:not(.dark) span:not(.text-accentPurple):not(.text-accentPink), html:not(.dark) .text-grey, html:not(.dark) .text-lightMuted { color: #334155 !important; }
+        html:not(.dark) .bg-secondaryBlack { background-color: #FFFFFF !important; border-color: #E2E8F0 !important; box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.03); }
+        html:not(.dark) .bg-graphite { background-color: #F1F5F9 !important; }
+        html:not(.dark) .bg-deepBlack { background-color: #FFFFFF !important; }
+        html:not(.dark) .text-ivory { color: #0F172A !important; }
+        html:not(.dark) .border-white\/5, html:not(.dark) .border-white\/10, html:not(.dark) .border-white\/20, html:not(.dark) .border-current\/10, html:not(.dark) .border-current\/20 { border-color: #E2E8F0 !important; }
+        html:not(.dark) #navbar { background-color: rgba(248, 250, 252, 0.8) !important; }
+        html:not(.dark) #navbar.scrolled { background-color: rgba(255, 255, 255, 0.95) !important; border-bottom-color: #E2E8F0 !important; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04); }
+        html:not(.dark) #mobile-menu, html:not(.dark) #project-modal { background-color: rgba(255, 255, 255, 0.98) !important; }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: transparent; }
+        ::-webkit-scrollbar-thumb { background: #D600FF; border-radius: 10px; }
+
+        .text-outline { -webkit-text-stroke: 1px rgba(214, 0, 255, 0.5); color: transparent; }
+        html:not(.dark) .text-outline { -webkit-text-stroke: 1px rgba(214, 0, 255, 0.7); }
+        .text-outline-hover:hover { color: #D600FF; -webkit-text-stroke: 0px transparent; transition: all 0.2s ease; }
+
+        .editorial-border { border: 1px solid rgba(214, 0, 255, 0.2); position: relative; border-radius: 1.25rem; overflow: hidden; }
+
+        /* Optimized Hardware-Accelerated Portrait Glow Frame */
+        @keyframes rotateGlow {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .elegant-portrait-frame {
+            position: relative;
+            padding: 5px;
+            border-radius: 2rem;
+            overflow: hidden;
+            box-shadow: 0 15px 35px -10px rgba(121, 40, 202, 0.3);
+            transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease;
+            background: #121212;
+            will-change: transform;
+        }
+
+        .elegant-portrait-frame::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: conic-gradient(from 0deg, transparent 0deg, #24005A 60deg, #7928CA 120deg, #D600FF 180deg, #00D9FF 240deg, transparent 300deg, transparent 360deg);
+            animation: rotateGlow 6s linear infinite;
+            z-index: 1;
+            will-change: transform;
+        }
+
+        .elegant-portrait-frame::after {
+            content: '';
+            position: absolute;
+            inset: 3px;
+            background: #080808;
+            border-radius: 1.85rem;
+            z-index: 2;
+        }
+
+        .elegant-portrait-frame-content {
+            position: relative;
+            z-index: 3;
+            width: 100%;
+            border-radius: 1.85rem;
+            overflow: hidden;
+        }
+
+        .elegant-portrait-frame:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 45px -5px rgba(0, 217, 255, 0.3);
+        }
+
+        /* Fast Scroll Reveal Animations */
+        .reveal {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+            will-change: opacity, transform;
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Hover Monochrome Image Effect - Filter abu-abu telah dihapus sesuai permintaan */
+        .img-monochrome {
+            transition: transform 0.3s ease;
+            will-change: transform;
+        }
+        .group:hover .img-monochrome {
+            transform: scale(1.02);
+        }
+
+        body.modal-open { overflow: hidden; }
+
+        /* Smooth Navbar Hide/Show Effect */
+        #navbar {
+            transition: transform 0.3s ease, background-color 0.3s ease, padding 0.3s ease;
+        }
+        #navbar.nav-hidden {
+            transform: translateY(-100%);
+        }
+    </style>
+</head>
+<body class="font-sans antialiased selection:bg-accentPurple selection:text-white">
+
+    <nav id="navbar" class="fixed w-full top-0 z-50 transition-all duration-300 py-6 px-6 md:px-12 border-b border-transparent">
+        <div class="max-w-[1400px] mx-auto flex justify-between items-center">
+            <a href="#" class="font-display font-bold text-xl tracking-widest hover:text-accentPurple transition-colors z-50">
+                REZHA FAHLEVI<span class="text-accentPurple text-xs align-top ml-0.5">®</span>
+            </a>
+
+            <div class="hidden lg:flex items-center space-x-8 text-xs font-display tracking-[0.2em] text-grey">
+                <a href="#about" class="nav-link hover:text-accentPurple transition-colors">ABOUT</a>
+                <a href="#works" class="nav-link hover:text-accentPurple transition-colors">WORKS</a>
+                <a href="#process" class="nav-link hover:text-accentPurple transition-colors">PROCESS</a>
+                <a href="#experience" class="nav-link hover:text-accentPurple transition-colors">EXPERIENCE</a>
+                
+                <button id="theme-toggle" class="w-10 h-10 rounded-full border border-accentPurple/30 flex items-center justify-center hover:bg-accentPurple hover:text-white transition-all text-accentPurple" aria-label="Toggle Light/Dark Theme">
+                    <i class="ph ph-sun text-lg hidden dark:block"></i>
+                    <i class="ph ph-moon text-lg block dark:hidden"></i>
+                </button>
+
+                <a href="#contact" class="nav-link border border-accentPurple/50 text-accentPurple px-6 py-2.5 rounded-full hover:bg-accentPurple hover:text-white transition-all duration-300">
+                    LET'S CONNECT
+                </a>
+            </div>
+
+            <div class="flex items-center space-x-4 lg:hidden">
+                <button id="mobile-theme-toggle" class="w-9 h-9 rounded-full border border-accentPurple/30 flex items-center justify-center text-accentPurple z-50" aria-label="Toggle Theme">
+                    <i class="ph ph-sun text-base hidden dark:block"></i>
+                    <i class="ph ph-moon text-base block dark:hidden"></i>
+                </button>
+                <button id="mobile-menu-btn" class="text-2xl focus:outline-none z-50 relative" aria-label="Open Mobile Menu">
+                    <i class="ph ph-list" id="menu-icon"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Navigation Overlay -->
+    <div id="mobile-menu" class="fixed inset-0 bg-deepBlack/95 backdrop-blur-xl z-40 transform translate-y-full transition-transform duration-300 flex flex-col justify-center items-center space-y-8 font-display text-2xl tracking-widest opacity-0 pointer-events-none">
+        <a href="#about" class="mobile-link hover:text-accentPurple transition-colors">ABOUT</a>
+        <a href="#works" class="mobile-link hover:text-accentPurple transition-colors">WORKS</a>
+        <a href="#process" class="mobile-link hover:text-accentPurple transition-colors">PROCESS</a>
+        <a href="#experience" class="mobile-link hover:text-accentPurple transition-colors">EXPERIENCE</a>
+        <a href="#contact" class="mobile-link text-accentPurple border border-accentPurple px-8 py-3 rounded-full hover:bg-accentPurple hover:text-white transition-colors mt-4">CONNECT</a>
+    </div>
+
+    <section id="home" class="min-h-[100svh] pt-32 pb-16 px-6 md:px-12 flex flex-col justify-center relative overflow-hidden">
+        <div class="absolute top-1/4 right-0 w-[40vw] h-[40vw] bg-accentPurple/10 blur-[100px] rounded-full -z-10 pointer-events-none"></div>
+        <div class="absolute bottom-0 left-0 w-[30vw] h-[30vw] bg-accentPink/10 blur-[80px] rounded-full -z-10 pointer-events-none"></div>
+        
+        <div class="max-w-[1400px] mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center relative z-10">
+            <div class="lg:col-span-7 space-y-8 reveal">
+                <div class="inline-flex border border-accentPurple/30 rounded-full px-5 py-2 items-center gap-3 bg-secondaryBlack/50 backdrop-blur-sm">
+                    <div class="w-1.5 h-1.5 bg-accentPink rounded-full animate-pulse"></div>
+                    <span class="text-[10px] md:text-xs font-display tracking-[0.2em] text-accentPurple uppercase" id="hero-role-label">Creative Thinker / Digital Creator / Public Communication / Inside Sales</span>
+                </div>
+                
+                <h1 class="font-display font-bold text-5xl md:text-7xl lg:text-[5.5rem] leading-[1.05] uppercase">
+                    Ideas are<br>
+                    <span class="text-transparent bg-clip-text bg-theme-gradient italic">only the</span><br>
+                    beginning.
+                </h1>
+                
+                <p class="font-display text-base md:text-lg text-grey uppercase tracking-[0.15em] border-l-2 border-accentPurple pl-4">
+                    "Think Different. Create with Purpose."
+                </p>
+                
+                <p class="text-grey text-base md:text-lg max-w-xl leading-relaxed font-light" id="hero-bio"></p>
+                
+                <div class="flex flex-wrap items-center gap-4 pt-4">
+                    <a href="#works" class="nav-link bg-accentPurple text-white px-8 py-4 rounded-full font-display text-xs tracking-widest font-bold hover:bg-accentPink transition-colors flex items-center gap-2 shadow-lg shadow-accentPurple/20">
+                        JELAJAHI KARYA <i class="ph ph-arrow-right text-lg"></i>
+                    </a>
+                    <a href="#about" class="nav-link bg-transparent border border-current/20 px-8 py-4 rounded-full font-display text-xs tracking-widest hover:border-accentPurple hover:text-accentPurple transition-colors">
+                        TENTANG SAYA
+                    </a>
+                </div>
+            </div>
+
+            <div class="lg:col-span-5 relative reveal mt-8 lg:mt-0 flex justify-center">
+                <div class="w-full max-w-md">
+                    <div class="elegant-portrait-frame group">
+                        <div class="elegant-portrait-frame-content">
+                            <div class="w-full aspect-[4/5] bg-graphite overflow-hidden rounded-[1.85rem] border border-white/10 relative shadow-inner">
+                                <img id="hero-profile-img" src="" fetchpriority="high" decoding="async" alt="Rezha Fahlevi Profile" class="w-full h-full object-cover object-center img-monochrome opacity-90 group-hover:opacity-100 rounded-[1.85rem]">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="py-24 px-6 md:px-12 bg-secondaryBlack relative">
+        <div class="max-w-[1400px] mx-auto">
+            <div class="mb-16 reveal">
+                <h2 class="font-display font-bold text-3xl md:text-5xl lg:text-6xl max-w-4xl leading-[1.1] uppercase">
+                    "Bukan hanya tentang apa yang saya buat, tetapi bagaimana saya <span class="text-accentPurple italic">melakukan</span>."
+                </h2>
+            </div>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20">
+                <div class="lg:col-span-6 space-y-6 text-grey text-base md:text-lg leading-relaxed font-light reveal" id="about-narrative"></div>
+                
+                <div class="lg:col-span-6 grid grid-cols-1 sm:grid-cols-2 gap-6 reveal">
+                    <div class="editorial-border p-8 bg-deepBlack group">
+                        <i class="ph ph-magnifying-glass text-4xl text-accentPurple/60 mb-6 group-hover:text-accentPink transition-colors"></i>
+                        <h3 class="font-display font-semibold text-lg tracking-widest uppercase mb-2">Curiosity</h3>
+                        <div class="w-8 h-px bg-current/20 group-hover:bg-accentPurple transition-colors"></div>
+                    </div>
+                    <div class="editorial-border p-8 bg-deepBlack group sm:mt-12">
+                        <i class="ph ph-lightbulb-filament text-4xl text-accentPurple/60 mb-6 group-hover:text-accentPink transition-colors"></i>
+                        <h3 class="font-display font-semibold text-lg tracking-widest uppercase mb-2">Creative Thinking</h3>
+                        <div class="w-8 h-px bg-current/20 group-hover:bg-accentPurple transition-colors"></div>
+                    </div>
+                    <div class="editorial-border p-8 bg-deepBlack group">
+                        <i class="ph ph-users text-4xl text-accentPurple/60 mb-6 group-hover:text-accentPink transition-colors"></i>
+                        <h3 class="font-display font-semibold text-lg tracking-widest uppercase mb-2">Human Connection</h3>
+                        <div class="w-8 h-px bg-current/20 group-hover:bg-accentPurple transition-colors"></div>
+                    </div>
+                    <div class="editorial-border p-8 bg-deepBlack group sm:mt-12">
+                        <i class="ph ph-book-open text-4xl text-accentPurple/60 mb-6 group-hover:text-accentPink transition-colors"></i>
+                        <h3 class="font-display font-semibold text-lg tracking-widest uppercase mb-2">Continuous Learning</h3>
+                        <div class="w-8 h-px bg-current/20 group-hover:bg-accentPurple transition-colors"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="works" class="py-24 px-6 md:px-12 relative border-t border-current/10">
+        <div class="max-w-[1400px] mx-auto">
+            <div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-16 gap-8 reveal">
+                <div class="max-w-2xl">
+                    <div class="flex items-center gap-4 mb-6">
+                        <div class="w-12 h-px bg-accentPink"></div>
+                        <span class="text-xs font-display tracking-[0.2em] text-accentPink uppercase">Selected Works</span>
+                    </div>
+                    <h2 class="font-display font-bold text-4xl md:text-5xl lg:text-6xl leading-tight uppercase">Ideas, Shaped into<br><span class="text-transparent bg-clip-text bg-theme-gradient italic">Digital Experiences.</span></h2>
+                </div>
+                <p class="text-grey text-base leading-relaxed max-w-sm md:text-right font-light">Setiap proyek merupakan kesempatan untuk mengeksplorasi ide, menyelesaikan masalah, dan menciptakan hasil dari pembelajaran.</p>
+            </div>
+
+            <div id="projects-grid" class="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-16"></div>
+        </div>
+    </section>
+
+    <section id="process" class="py-24 px-6 md:px-12 bg-secondaryBlack overflow-hidden relative">
+        <div class="max-w-[1400px] mx-auto">
+            <div class="text-center mb-16 reveal">
+                <span class="text-xs font-display tracking-[0.2em] text-accentPurple uppercase block mb-4">My Approach</span>
+                <h2 class="font-display font-bold text-3xl md:text-5xl uppercase max-w-3xl mx-auto leading-tight">Rasa ingin tahu adalah jembatan untuk perkembangan.</h2>
+            </div>
+
+            <div class="flex flex-col lg:flex-row justify-between relative gap-12 lg:gap-0">
+                <div class="hidden lg:block absolute top-16 left-[12%] right-[12%] h-px bg-current/10 z-0"></div>
+
+                <div class="relative z-10 lg:w-1/4 px-4 text-center reveal group">
+                    <div class="bg-secondaryBlack inline-block px-4">
+                        <div class="text-6xl md:text-8xl font-display font-bold text-outline text-outline-hover mb-6 transition-all">01</div>
+                    </div>
+                    <h3 class="font-display font-bold text-xl text-accentPurple mb-4 uppercase tracking-widest">Observe</h3>
+                    <p class="text-grey text-sm font-light leading-relaxed max-w-xs mx-auto">Memahami konteks, kebutuhan, masalah, dan orang yang terlibat secara mendalam.</p>
+                </div>
+
+                <div class="relative z-10 lg:w-1/4 px-4 text-center reveal group">
+                    <div class="bg-secondaryBlack inline-block px-4">
+                        <div class="text-6xl md:text-8xl font-display font-bold text-outline text-outline-hover mb-6 transition-all">02</div>
+                    </div>
+                    <h3 class="font-display font-bold text-xl text-accentPink mb-4 uppercase tracking-widest">Explore</h3>
+                    <p class="text-grey text-sm font-light leading-relaxed max-w-xs mx-auto">Mengembangkan ide, membandingkan perspektif, dan mencari kemungkinan baru.</p>
+                </div>
+
+                <div class="relative z-10 lg:w-1/4 px-4 text-center reveal group">
+                    <div class="bg-secondaryBlack inline-block px-4">
+                        <div class="text-6xl md:text-8xl font-display font-bold text-outline text-outline-hover mb-6 transition-all">03</div>
+                    </div>
+                    <h3 class="font-display font-bold text-xl text-accentPurple mb-4 uppercase tracking-widest">Create</h3>
+                    <p class="text-grey text-sm font-light leading-relaxed max-w-xs mx-auto">Mengubah gagasan menjadi konsep visual, desain, atau pengalaman digital.</p>
+                </div>
+
+                <div class="relative z-10 lg:w-1/4 px-4 text-center reveal group">
+                    <div class="bg-secondaryBlack inline-block px-4">
+                        <div class="text-6xl md:text-8xl font-bold text-outline text-outline-hover mb-6 transition-all">04</div>
+                    </div>
+                    <h3 class="font-display font-bold text-xl text-accentPink mb-4 uppercase tracking-widest">Refine</h3>
+                    <p class="text-grey text-sm font-light leading-relaxed max-w-xs mx-auto">Meninjau hasil, mengevaluasi pendekatan, dan menemukan peluang perbaikan.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="experience" class="py-24 px-6 md:px-12 border-t border-current/10">
+        <div class="max-w-[1400px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24">
+            <div class="reveal">
+                <div class="sticky top-32">
+                    <div class="flex items-center gap-4 mb-6">
+                        <div class="w-12 h-px bg-accentPurple"></div>
+                        <span class="text-xs font-display tracking-[0.2em] text-accentPurple uppercase">Professional Experience</span>
+                    </div>
+                    <h2 class="font-display font-bold text-4xl md:text-5xl mb-8 leading-tight uppercase">
+                        Untuk memahami sesuatu dimulai dengan <span class="text-accentPink italic">memahami kebutuhan.</span>
+                    </h2>
+                    <div class="space-y-6 text-grey text-base leading-relaxed font-light mb-10">
+                        <p>Pengalaman saya memberikan perspektif tentang pentingnya memahami produk sekaligus kebutuhan orang yang menggunakannya.</p>
+                        <p>Saya menghargai proses mendengarkan, menggali kebutuhan, menjelaskan informasi dengan cara yang mudah dipahami, serta membantu mempertimbangkan pilihan yang sesuai.</p>
+                    </div>
+                    <div class="flex flex-wrap gap-3">
+                        <span class="px-5 py-2.5 bg-graphite text-xs uppercase tracking-widest rounded-full border border-current/10">Product Understanding</span>
+                        <span class="px-5 py-2.5 bg-graphite text-xs uppercase tracking-widest rounded-full border border-current/10">Customer Needs</span>
+                        <span class="px-5 py-2.5 bg-graphite text-xs uppercase tracking-widest rounded-full border border-current/10">Clear Communication</span>
+                    </div>
+                </div>
+            </div>
+
+            <div id="experience-timeline" class="border-l border-current/20 pl-8 md:pl-12 space-y-12 relative reveal"></div>
+        </div>
+    </section>
+
+    <section class="py-24 px-6 md:px-12 bg-secondaryBlack border-t border-current/10">
+        <div class="max-w-[1400px] mx-auto flex flex-col lg:flex-row gap-16 items-center">
+            <div class="lg:w-1/2 reveal">
+                <h2 class="font-display font-bold text-4xl md:text-5xl mb-6 uppercase leading-tight">Ide yang baik layak untuk <span class="text-accentPurple italic">dibagikan.</span></h2>
+                <p class="text-grey text-base font-light leading-relaxed mb-12 max-w-xl">Saya menyukai diskusi, bertukar pikiran, dan berbicara di depan umum. Saya tertarik pada bagaimana sebuah gagasan dapat disampaikan dengan jelas, bagaimana perbedaan perspektif membuka pemahaman baru, dan bagaimana percakapan dapat menghasilkan ide yang lebih baik.</p>
+                
+                <div class="space-y-8">
+                    <div class="flex gap-6 items-start group">
+                        <div class="text-accentPink mt-1 group-hover:scale-110 transition-transform"><i class="ph ph-chats-teardrop text-3xl"></i></div>
+                        <div>
+                            <h3 class="font-display font-bold text-lg mb-2 tracking-wide uppercase">Discuss</h3>
+                            <p class="text-grey text-sm font-light">Bertukar gagasan dan perspektif secara kritis dan terbuka.</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-6 items-start group">
+                        <div class="text-accentPurple mt-1 group-hover:scale-110 transition-transform"><i class="ph ph-megaphone text-3xl"></i></div>
+                        <div>
+                            <h3 class="font-display font-bold text-lg mb-2 tracking-wide uppercase">Communicate</h3>
+                            <p class="text-grey text-sm font-light">Menyampaikan pemikiran secara jelas dan terstruktur kepada audiens.</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-6 items-start group">
+                        <div class="text-accentPink mt-1 group-hover:scale-110 transition-transform"><i class="ph ph-plugs-connected text-3xl"></i></div>
+                        <div>
+                            <h3 class="font-display font-bold text-lg mb-2 tracking-wide uppercase">Connect</h3>
+                            <p class="text-grey text-sm font-light">Membangun hubungan dan kolaborasi melalui percakapan yang bermakna.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="lg:w-1/2 grid grid-cols-2 gap-4 reveal" id="communication-gallery"></div>
+        </div>
+    </section>
+
+    <section id="contact" class="py-24 px-6 md:px-12 bg-secondaryBlack relative">
+        <div class="max-w-4xl mx-auto text-center reveal">
+            <span class="text-xs font-display tracking-[0.2em] text-accentPurple uppercase block mb-6">Collaboration & Inquiries</span>
+            <h2 class="font-display font-bold text-5xl md:text-7xl mb-8 uppercase leading-[1.1]">Punya Ide?<br><span class="text-accentPink italic">Mari Diskusikan.</span></h2>
+            <p class="text-grey text-base md:text-lg font-light max-w-2xl mx-auto mb-12">Saya terbuka untuk peluang karier, proyek digital, kolaborasi kreatif, dan percakapan yang menghadirkan perspektif baru.</p>
+            
+            <div class="flex flex-wrap justify-center gap-4 md:gap-6" id="contact-buttons"></div>
+        </div>
+    </section>
+
+    <footer class="py-12 px-6 md:px-12 bg-deepBlack border-t border-current/10 relative">
+        <div class="max-w-[1400px] mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
+            <div class="text-center md:text-left">
+                <a href="#" class="font-display font-bold text-2xl tracking-widest block mb-2">
+                    REZHA FAHLEVI<span class="text-accentPurple text-sm align-top">®</span>
+                </a>
+                <p class="text-[10px] tracking-[0.2em] text-accentPurple font-display uppercase">Creative Thinker</p>
+            </div>
+            
+            <div class="text-grey text-sm font-display italic tracking-wide text-center">
+                "Built with curiosity. Driven by ideas."
+            </div>
+            
+            <div class="flex flex-col md:flex-row items-center gap-6">
+                <p class="text-grey text-xs font-light tracking-widest uppercase">© RZV. All rights reserved.</p>
+                <button onclick="window.scrollTo({top: 0, behavior: 'smooth'})" class="w-12 h-12 rounded-full border border-current/20 flex items-center justify-center hover:border-accentPurple hover:text-accentPurple transition-colors group bg-secondaryBlack" aria-label="Scroll to top">
+                    <i class="ph ph-arrow-up group-hover:-translate-y-1 transition-transform"></i>
+                </button>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Case Study Modal -->
+    <div id="project-modal" class="fixed inset-0 bg-deepBlack/98 backdrop-blur-xl z-[100] hidden opacity-0 transition-opacity duration-300 overflow-y-auto">
+        <button id="close-modal-btn" class="fixed top-6 right-6 md:top-8 md:right-12 w-12 h-12 bg-secondaryBlack rounded-full flex items-center justify-center hover:text-accentPink hover:border-accentPink border border-current/20 z-[110] transition-all shadow-xl" aria-label="Close modal">
+            <i class="ph ph-x text-2xl"></i>
+        </button>
+        <div class="min-h-screen pb-24" id="modal-content">
+            <div id="modal-body"></div>
+        </div>
+    </div>
+//UBAH DATA DISINI
+    <script>
+        const portfolioData = {
+            profile: {
+                photo: "https://i.imgur.com/e3SURti.jpeg", 
+                shortBio: "Saya Rezha Fahlevi. Saya senang mengeksplorasi ide, menciptakan pengalaman digital, dan mengembangkan perspektif melalui kreativitas serta komunikasi.",
+                aboutNarrative: `
+                    <p>Creative thinker yang tertarik pada dunia digital, pengembangan ide, dan komunikasi.</p>
+                    <p>Saya menikmati proses melihat sebuah masalah dari perspektif berbeda, mengeksplorasi kemungkinan baru, dan menemukan cara untuk mengubah gagasan menjadi sesuatu yang nyata.</p>
+                    <p>Bagi saya, kreativitas bukan hanya tentang membuat sesuatu terlihat menarik. Kreativitas adalah tentang memahami masalah, menemukan pendekatan yang tepat, dan menciptakan nilai melalui setiap proses yang dijalani.</p>
+                `
+            },
+            contact: {
+                email: "rezzfhlvinew@gmail.com",
+                whatsapp: "628998951070", 
+                instagram: "https://www.instagram.com/daun_matang?rpxt=MXd4M2Y5dGxyNDhoNg==",
+                linkedin: "https://www.linkedin.com/in/rezhafahlevi"
+            },
+            projects: [
+                {
+                    id: 1,
+                    title: "VESPA DEPOK BRANCH / WEBSITE PROJECT",
+                    category: "Website Design & Digital Catalog",
+                    shortDesc: "Eksplorasi website katalog digital untuk menyajikan produk Vespa dengan tampilan terstruktur, visual produk yang jelas, dan pengalaman penelusuran yang mudah.",
+                    thumbnail: "https://i.imgur.com/pgfbGjj.jpeg", 
+                    caseStudy: {
+                        overview: "Proyek ini bertujuan merancang antarmuka katalog digital yang menonjolkan estetika premium produk Vespa sekaligus memudahkan pengguna menemukan spesifikasi kendaraan.",
+                        objective: "Meningkatkan engagement digital dealer lokal melalui tampilan katalog yang modern dan responsif.",
+                        challenge: "Menyajikan banyak varian spesifikasi teknis tanpa membuat tampilan antarmuka terlihat berantakan pada smartphone.",
+                        approach: "Pendekatan desain minimalis dengan whitespace luas dan visual produk beresolusi tinggi.",
+                        process: "Observasi -> Wireframing -> Prototyping interaksi filter kategori.",
+                        finalDesignText: "Antarmuka yang bersih, premium, dengan navigasi yang intuitif untuk mengeksplorasi setiap model Vespa.",
+                        gallery: [
+                            "https://i.imgur.com/Cqa9t1S.png",
+                            "https://i.imgur.com/KB9nXNB.png",
+                            "https://i.imgur.com/7WBLqxQ.jpeg"
+                        ],
+                        link: "https://vespadepok.my.id/" 
+                    }
+                },
+                {
+                    id: 2,
+                    title: "NUTSY JAKARTA SHOP / WEBSITE PROJECT",
+                    category: "Website Design & Digital Catalog",
+                    shortDesc: "Ruang untuk menampilkan eksperimen desain, konsep antarmuka, pengembangan ide website, dan eksplorasi visual digital.",
+                    thumbnail: "https://i.imgur.com/vbnQ9eS.jpeg",
+                    caseStudy: {
+                        overview: "Koleksi eksplorasi konsep antarmuka dan interaksi mikro untuk menguji ide-ide baru dalam desain digital.",
+                        objective: "Mengeksplorasi batas kreativitas visual, tipografi eksperimental, dan layout asimetris.",
+                        challenge: "Menjaga fungsionalitas dasar dan aksesibilitas sambil bereksperimen.",
+                        approach: "Mengutamakan estetika editorial dan interaksi yang halus.",
+                        process: "Sketsa -> Layout Digital -> Prototipe Interaktif.",
+                        finalDesignText: "Galeri visual yang menunjukkan jangkauan gaya desain dan pemahaman teknis tools modern.",
+                        gallery: [
+                            "https://i.imgur.com/bXUy8q1.jpeg",
+                            "https://i.imgur.com/qAVpLMR.png",
+                            "https://i.imgur.com/NYaJi3E.png"
+                        ],
+                        link: "https://nutsyjakarta.github.io/shop/"
+                    }
+                },
+                {
+                    id: 3,
+                    title: "CREATIVE FLOW / DESIGN GRAPHIC PROJECT",
+                    category: "Creative Exploration",
+                    shortDesc: "Ruang placeholder untuk proyek dan gagasan baru yang sedang dalam tahap observasi dan pengembangan.",
+                    thumbnail: "https://i.imgur.com/oxkejF9.jpeg",
+                    caseStudy: {
+                        overview: "Proyek konseptualisasi dan eksplorasi visual.",
+                        objective: "Menciptakan solusi komunikasi spesifik dalam industri kreatif.",
+                        challenge: "Eksplorasi awal ideation.",
+                        approach: "Pendekatan berbasis riset visual.",
+                        process: "Observation & Problem Identification.",
+                        finalDesignText: "Tahap pengembangan.",
+                        gallery: ["https://i.imgur.com/0ckADwU.png",
+                        "https://i.imgur.com/S49bgwH.jpeg"
+                        ],
+                        link: "#"
+                    }
+                }
+            ],
+            experience: [
+                {
+                    role: "Frontliner",
+                    company: "PT.Global Teknologi Niaga / Blibli Store",
+                    logo: "https://i.imgur.com/IJeoa2L.png",
+                    description: "Membantu klien memahami nilai produk melalui konsultasi mendalam dan rekomendasi solusi tepat.",
+                    learnings: "Empati adalah fondasi utama sebelum menawarkan solusi produk."
+                },
+                {
+                    role: "Sales Consultant", 
+                    company: "PT.Infonet Mitra Sejati / Authorized Service Center", 
+                    logo: "https://i.imgur.com/hga5MKq.png",
+                    description: "Menganalisis kebutuhan teknis pelanggan dan memberikan rekomendasi komputasi yang sesuai.",
+                    learnings: "Kejelasan komunikasi teknis agar mudah dipahami semua kalangan dan mendapatkan hasil dari komunikasi."
+                },
+                {
+                    role: "Digital Marketing", 
+                    company: "PT.Dwi Pratama Mandiri / Vespa Official Branch", 
+                    logo: "https://i.imgur.com/LqIrFwB.jpeg",
+                    description: "Memasarkan produk melalui platform digital untuk meningkatkan brand awareness dan penjualan.",
+                    learnings: "Visual terstruktur mampu mengonversi minat menjadi interaksi nyata."
+                }
+            ],
+            communicationImages: [
+                "https://i.imgur.com/UANRm98.png", 
+                "https://i.imgur.com/IsSm6zW.jpeg", 
+                "https://i.imgur.com/URlfs0v.jpeg", 
+                "https://i.imgur.com/4Fx0Fxw.jpeg"  
+            ]
+        };
+
+        document.addEventListener('DOMContentLoaded', () => {
+            // Theme Toggle
+            const themeToggleBtn = document.getElementById('theme-toggle');
+            const mobileThemeToggle = document.getElementById('mobile-theme-toggle');
+            const htmlElement = document.documentElement;
+
+            function toggleTheme() {
+                htmlElement.classList.toggle('dark');
+                localStorage.setItem('theme', htmlElement.classList.contains('dark') ? 'dark' : 'light');
+            }
+
+            if (localStorage.getItem('theme') === 'light') htmlElement.classList.remove('dark');
+            themeToggleBtn.addEventListener('click', toggleTheme);
+            mobileThemeToggle.addEventListener('click', toggleTheme);
+
+            // Populate Hero
+            document.getElementById('hero-profile-img').src = portfolioData.profile.photo;
+            document.getElementById('hero-bio').textContent = portfolioData.profile.shortBio;
+            document.getElementById('about-narrative').innerHTML = portfolioData.profile.aboutNarrative;
+
+            // Populate Contact Buttons (Fixed template literal)
+            document.getElementById('contact-buttons').innerHTML = `
+                <a href="mailto:${portfolioData.contact.email}" class="bg-accentPurple text-white px-7 py-4 rounded-full font-display font-bold text-xs tracking-widest hover:bg-accentPink transition-colors flex items-center justify-center gap-2 uppercase shadow-lg shadow-accentPurple/20">
+                    <i class="ph ph-envelope-simple text-lg"></i> Email
+                </a>
+                <a href="https://wa.me/${portfolioData.contact.whatsapp}" target="_blank" rel="noopener noreferrer" class="border border-current/20 px-7 py-4 rounded-full font-display font-bold text-xs tracking-widest hover:border-accentPink hover:text-accentPink transition-colors flex items-center justify-center gap-2 uppercase bg-secondaryBlack">
+                    <i class="ph ph-whatsapp-logo text-lg"></i> WhatsApp
+                </a>
+                <a href="${portfolioData.contact.instagram}" target="_blank" rel="noopener noreferrer" class="border border-current/20 px-7 py-4 rounded-full font-display font-bold text-xs tracking-widest hover:border-accentPurple hover:text-accentPurple transition-colors flex items-center justify-center gap-2 uppercase bg-secondaryBlack">
+                    <i class="ph ph-instagram-logo text-lg"></i> Instagram
+                </a>
+                <a href="${portfolioData.contact.linkedin}" target="_blank" rel="noopener noreferrer" class="border border-current/20 px-7 py-4 rounded-full font-display font-bold text-xs tracking-widest hover:border-accentPink hover:text-accentPink transition-colors flex items-center justify-center gap-2 uppercase bg-secondaryBlack">
+                    <i class="ph ph-linkedin-logo text-lg"></i> LinkedIn
+                </a>
+            `;
+
+            // Populate Projects Grid
+            const projectsGrid = document.getElementById('projects-grid');
+            portfolioData.projects.forEach((proj) => {
+                const card = document.createElement('div');
+                card.className = 'group cursor-pointer reveal';
+                card.onclick = () => openProjectModal(proj.id);
+                card.innerHTML = `
+                    <div class="elegant-portrait-frame mb-6">
+                        <div class="elegant-portrait-frame-content">
+                            <div class="relative overflow-hidden aspect-[16/10] bg-graphite rounded-[1.85rem]">
+                                <img src="${proj.thumbnail}" loading="lazy" decoding="async" alt="${proj.title}" class="w-full h-full object-cover img-monochrome rounded-[1.85rem]">
+                                <div class="absolute inset-0 bg-deepBlack/70 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 backdrop-blur-xs rounded-[1.85rem]">
+                                    <span class="text-accentPink font-display tracking-widest text-xs border border-accentPink px-5 py-2.5 rounded-full uppercase">View Case Study</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-[10px] font-display tracking-[0.2em] text-accentPurple mb-2 uppercase">${proj.category}</p>
+                    <h3 class="font-display font-bold text-xl mb-2 group-hover:text-accentPink transition-colors">${proj.title}</h3>
+                    <p class="text-grey text-sm font-light leading-relaxed">${proj.shortDesc}</p>
+                `;
+                projectsGrid.appendChild(card);
+            });
+
+            // Populate Timeline
+            const expTimeline = document.getElementById('experience-timeline');
+            portfolioData.experience.forEach(exp => {
+                const item = document.createElement('div');
+                item.className = 'relative before:absolute before:-left-[37px] md:before:-left-[53px] before:top-6 before:w-3.5 before:h-3.5 before:bg-accentPurple before:rounded-full before:border-2 before:border-deepBlack';
+                item.innerHTML = `
+                    <div class="flex items-center gap-4 mb-4">
+                        <div class="w-12 h-12 flex-shrink-0 bg-white rounded-xl overflow-hidden p-0.5 border border-accentPurple/20">
+                            <img src="${exp.logo}" loading="lazy" decoding="async" alt="${exp.company}" class="w-full h-full object-cover rounded-lg">
+                        </div>
+                        <div>
+                            <h3 class="font-display font-bold text-lg uppercase tracking-wide">${exp.role}</h3>
+                            <h4 class="text-grey font-display tracking-widest text-xs uppercase">${exp.company}</h4>
+                        </div>
+                    </div>
+                    <p class="text-grey text-sm font-light leading-relaxed mb-4">${exp.description}</p>
+                    <div class="bg-secondaryBlack border border-current/10 p-4 rounded-xl">
+                        <span class="text-[9px] text-grey font-display uppercase tracking-[0.2em] block mb-1">Key Learning</span>
+                        <p class="text-xs italic font-light">"${exp.learnings}"</p>
+                    </div>
+                `;
+                expTimeline.appendChild(item);
+            });
+
+            // Populate Communication Gallery
+            const commGallery = document.getElementById('communication-gallery');
+            portfolioData.communicationImages.forEach(imgSrc => {
+                const imgContainer = document.createElement('div');
+                imgContainer.className = 'elegant-portrait-frame group';
+                imgContainer.innerHTML = `
+                    <div class="elegant-portrait-frame-content">
+                        <div class="aspect-square bg-graphite overflow-hidden rounded-[1.85rem]">
+                            <img src="${imgSrc}" loading="lazy" decoding="async" class="w-full h-full object-cover img-monochrome opacity-80 group-hover:opacity-100 rounded-[1.85rem]" alt="Communication Activity">
+                        </div>
+                    </div>
+                `;
+                commGallery.appendChild(imgContainer);
+            });
+
+            // Fast Intersection Observer
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+            // Navigation Links Click Handler for Auto-Show Navbar & Smooth Scroll
+            const allNavLinks = document.querySelectorAll('a[href^="#"]');
+            allNavLinks.forEach(link => {
+                link.addEventListener('click', (e) => {
+                    const targetId = link.getAttribute('href');
+                    if (targetId && targetId !== '#') {
+                        const targetSection = document.querySelector(targetId);
+                        if (targetSection) {
+                            e.preventDefault();
+                            
+                            // Close mobile menu if open
+                            if (isMenuOpen) {
+                                isMenuOpen = false;
+                                mobileMenu.classList.add('translate-y-full', 'opacity-0', 'pointer-events-none');
+                            }
+
+                            // Force Navbar to display/stay visible
+                            navbar.classList.remove('nav-hidden');
+
+                            // Scroll smooth to target section
+                            targetSection.scrollIntoView({ behavior: 'smooth' });
+                        }
+                    }
+                });
+            });
+        });
+
+        // Optimized Modal
+        const modal = document.getElementById('project-modal');
+        const modalBody = document.getElementById('modal-body');
+
+        function openProjectModal(id) {
+            const project = portfolioData.projects.find(p => p.id === id);
+            if(!project) return;
+
+            // Template rendering termasuk Gallery Project yang sebelumnya tidak dimunculkan, dengan size h-auto mengikuti proporsi asli.
+            modalBody.innerHTML = `
+                <div class="relative min-h-[40vh] flex items-end pb-12 pt-24 px-6 md:px-12 max-w-[1200px] mx-auto">
+                    <div>
+                        <span class="inline-block border border-accentPink/50 px-3 py-1 rounded-full text-accentPink font-display tracking-widest text-[10px] mb-4 uppercase">${project.category}</span>
+                        <h2 class="font-display font-bold text-3xl md:text-5xl uppercase leading-tight">${project.title}</h2>
+                    </div>
+                </div>
+                
+                <div class="max-w-[1200px] mx-auto px-6 md:px-12 mt-8 grid grid-cols-1 lg:grid-cols-12 gap-12">
+                    <div class="lg:col-span-4 space-y-6 text-sm text-grey font-light">
+                        <div><h4 class="font-display text-accentPurple text-xs tracking-widest uppercase mb-2">Overview</h4><p>${project.caseStudy.overview}</p></div>
+                        <div><h4 class="font-display text-accentPurple text-xs tracking-widest uppercase mb-2">Objective</h4><p>${project.caseStudy.objective}</p></div>
+                    </div>
+                    <div class="lg:col-span-8 space-y-6">
+                        <div><h4 class="font-display font-bold text-xl uppercase mb-2">Creative Approach</h4><p class="text-grey text-base font-light border-l-2 border-accentPink pl-4">${project.caseStudy.approach}</p></div>
+                        <div class="bg-secondaryBlack p-6 border border-current/10 rounded-xl"><h4 class="font-display font-bold text-accentPurple text-sm uppercase mb-2">Final Output</h4><p class="text-sm font-light">${project.caseStudy.finalDesignText}</p></div>
+                    </div>
+                </div>
+
+                ${project.caseStudy.gallery && project.caseStudy.gallery.length > 0 ? `
+                <div class="max-w-[1200px] mx-auto px-6 md:px-12 mt-12 flex flex-col gap-8">
+                    ${project.caseStudy.gallery.filter(img => img.trim() !== "").map(img => `
+                        <img src="${img}" alt="Project Gallery Image" class="w-full h-auto rounded-xl">
+                    `).join('')}
+                </div>
+                ` : ''}
+
+                ${project.caseStudy.link && project.caseStudy.link !== "#" ? `
+                    <div class="mt-12 text-center">
+                        <a href="${project.caseStudy.link}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 bg-accentPurple text-white px-8 py-4 rounded-full font-display font-bold text-xs tracking-widest hover:bg-accentPink transition-all uppercase">
+                            VIEW LIVE PROJECT <i class="ph ph-arrow-square-out text-lg"></i>
+                        </a>
+                    </div>
+                ` : ''}
+            `;
+
+            document.body.classList.add('modal-open');
+            modal.classList.remove('hidden');
+            requestAnimationFrame(() => modal.classList.remove('opacity-0'));
+        }
+
+        function closeModal() {
+            modal.classList.add('opacity-0');
+            setTimeout(() => {
+                modal.classList.add('hidden');
+                document.body.classList.remove('modal-open');
+            }, 300);
+        }
+
+        document.getElementById('close-modal-btn').addEventListener('click', closeModal);
+
+        // Mobile Menu
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        let isMenuOpen = false;
+
+        mobileMenuBtn.addEventListener('click', () => {
+            isMenuOpen = !isMenuOpen;
+            if (isMenuOpen) {
+                mobileMenu.classList.remove('translate-y-full', 'opacity-0', 'pointer-events-none');
+            } else {
+                mobileMenu.classList.add('translate-y-full', 'opacity-0', 'pointer-events-none');
+            }
+        });
+
+        // Smart Navbar Scroll Behavior (Shows up on scroll / navigation, hides smoothly on scroll down)
+        const navbar = document.getElementById('navbar');
+        let lastScrollY = window.scrollY;
+
+        window.addEventListener('scroll', () => {
+            const currentScrollY = window.scrollY;
+
+            // Toggle background glassmorphism
+            if (currentScrollY > 40) {
+                navbar.classList.add('scrolled', 'backdrop-blur-md', 'border-b', 'py-4');
+                navbar.classList.remove('py-6', 'border-transparent');
+            } else {
+                navbar.classList.remove('scrolled', 'backdrop-blur-md', 'border-b', 'py-4');
+                navbar.classList.add('py-6', 'border-transparent');
+            }
+
+            // Auto show/hide navbar depending on scroll direction
+            if (currentScrollY > lastScrollY && currentScrollY > 100) {
+                // Scrolling down -> Hide navbar
+                navbar.classList.add('nav-hidden');
+            } else {
+                // Scrolling up -> Show navbar
+                navbar.classList.remove('nav-hidden');
+            }
+
+            lastScrollY = currentScrollY;
+        }, { passive: true });
+    </script>
+</body>
+</html>
